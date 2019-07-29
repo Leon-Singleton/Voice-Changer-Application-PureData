@@ -1,0 +1,34 @@
+#N canvas 801 108 958 988 10;
+#X obj 266 98 loadbang;
+#X obj 266 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 169 218 start;
+#X obj 169 183 delay 500;
+#X msg 266 199 open speech.wav;
+#X obj 266 242 readsf~;
+#X obj 251 466 output~;
+#X obj 341 466 wsprobe~;
+#X text 165 240 comment;
+#X obj 285 340 hsl 128 15 0 10000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 8700 1;
+#X floatatom 282 369 5 0 0 0 - - -;
+#X obj 267 401 bp~;
+#X floatatom 274 302 5 0 0 0 - - -;
+#X obj 277 272 hsl 128 15 0 100 0 0 empty empty centre-frequency -2
+-8 0 10 -262144 -1 -1 12700 1;
+#X text 287 321 Q;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
+#X connect 5 1 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 2;
+#X connect 11 0 6 0;
+#X connect 11 0 6 1;
+#X connect 11 0 7 0;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;

@@ -1,0 +1,38 @@
+#N canvas 19 134 865 618 10;
+#X obj 253 54 loadbang;
+#X obj 253 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 160 174 start;
+#X obj 160 137 delay 500;
+#X msg 253 138 open speech.wav;
+#X obj 253 180 readsf~;
+#X obj 326 219 delwrite~ delayline 1000;
+#X obj 330 258 hsl 128 15 1 1000 0 0 empty empty delay -2 -8 0 10 -262144
+-1 -1 1800 1;
+#X floatatom 327 293 5 0 0 0 - - -;
+#X obj 327 328 sig~;
+#X obj 323 394 vd~ delayline;
+#X obj 198 566 output~;
+#X obj 285 576 wsprobe~;
+#X obj 488 42 LFO~ 10 0.4;
+#X obj 251 469 +~;
+#X obj 324 368 +~;
+#X obj 574 315;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 14 0;
+#X connect 5 1 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 14 1;
+#X connect 13 2 15 1;
+#X connect 14 0 11 1;
+#X connect 14 0 11 0;
+#X connect 14 0 12 0;
+#X connect 15 0 10 0;

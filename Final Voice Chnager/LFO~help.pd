@@ -1,0 +1,34 @@
+#N canvas 363 307 535 572 10;
+#X obj 378 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 234 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 186 72 5 0 0 0 - - -;
+#X floatatom 280 72 5 0 0 0 - - -;
+#X floatatom 186 340 5 0 0 0 - - -;
+#X floatatom 282 339 5 0 0 0 - - -;
+#X obj 380 339 wsprobe~;
+#X obj 829 459;
+#X obj 823 463;
+#X obj 186 152 LFO~ 5 0.5;
+#X text 133 358 Depth outlet;
+#X text 368 359 Audio signal outlet;
+#X text 247 85 Depth inlet;
+#X text 387 64 Reset inlet;
+#X text 256 356 Speed Outlet;
+#X text 152 87 Speed inlet;
+#X text 124 405 LFO~ is a low frequency oscillator that generates a
+sound signal provided a speed and a depth. The speed and the depth
+can be altered using the sliders or by passing values into the respective
+inlets. The initial configuration of the LFO can be set using arguments
+which specify the speed and depth. The reset bang will restore the
+initial configuration of the LFO. LFO can also alter it's output between
+a sine or square waveform. LFO also provides external outlets for both
+speed and depth.;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 9 0;
+#X connect 3 0 9 1;
+#X connect 9 0 4 0;
+#X connect 9 1 5 0;
+#X connect 9 2 6 0;

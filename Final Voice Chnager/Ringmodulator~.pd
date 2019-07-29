@@ -1,0 +1,68 @@
+#N canvas 496 170 912 674 10;
+#X obj 103 103 cnv 15 214 154 empty empty Ringmodulator 20 12 0 14
+-233017 -66577 0;
+#X obj 534 61 inlet~;
+#X obj 574 554 *~;
+#X obj 574 600 outlet~;
+#X obj 599 70 r \$0-activate;
+#X obj 534 158 s~ \$0-bypass;
+#X obj 534 117 spigot~;
+#X obj 643 557 r~ \$0-bypass;
+#X obj 256 126 tgl 15 0 \$0-activate activate-ringm empty 17 7 0 10
+-204800 -1 -1 0 1;
+#X text 247 144 ACTIV;
+#X floatatom 275 168 5 0 0 0 - - -;
+#X floatatom 274 214 5 0 0 0 - - -;
+#X obj 293 126 bng 15 250 50 0 empty ringm-reset empty 17 7 0 10 -204786
+-1 -1;
+#X text 280 144 RESET;
+#X obj 125 170 hsl 128 15 0 50 0 0 empty ringmodulator-speed SPEED
+-2 -8 0 10 -257985 -1 -1 0 1;
+#X obj 126 218 hsl 128 15 1 0 0 0 empty ringmodulator-depth DEPTH -2
+-8 0 10 -257985 -1 -1 0 1;
+#X text 121 185 0;
+#X text 244 185 50;
+#X text 248 233 0;
+#X text 121 234 1;
+#X obj 313 7 loadbang;
+#X obj 589 212 osc~;
+#X obj 589 341 clip~ -1 1;
+#X obj 588 465 *~;
+#X floatatom 605 290 5 0 0 0 - - -;
+#X obj 590 314 *~;
+#X obj 605 238 loadbang;
+#X obj 605 265 1;
+#X msg 348 46 \; ringmodulator-speed 0 \; ringmodulator-depth 1;
+#X obj 338 166 s Rspeed;
+#X obj 338 213 s Rdepth;
+#X obj 589 184 r Rspeed;
+#X obj 603 434 r Rdepth;
+#X text 58 369 Switch off the activate toggle to bypass signal to next
+sound-effect patch or outlet.;
+#X text 59 404 Click on reset to set paremeter to default value;
+#X text 58 345 Swich on the activate toggle to activate sound-effect.
+;
+#X text 57 310 This is a sound-effect patch that applies ring modualtion
+to the input signal by multiplying by a sine wave osciallor.;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 6 1;
+#X connect 6 0 5 0;
+#X connect 6 1 2 0;
+#X connect 7 0 3 0;
+#X connect 10 0 29 0;
+#X connect 11 0 30 0;
+#X connect 12 0 28 0;
+#X connect 14 0 10 0;
+#X connect 15 0 11 0;
+#X connect 20 0 28 0;
+#X connect 21 0 25 0;
+#X connect 22 0 23 0;
+#X connect 23 0 2 1;
+#X connect 24 0 25 1;
+#X connect 25 0 22 0;
+#X connect 26 0 27 0;
+#X connect 27 0 24 0;
+#X connect 31 0 21 0;
+#X connect 32 0 23 1;
+#X coords 0 -1 1 1 220 160 1 100 100;

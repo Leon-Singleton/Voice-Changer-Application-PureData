@@ -1,0 +1,39 @@
+#N canvas 132 103 603 342 10;
+#X obj 103 103 cnv 15 214 74 empty empty Highpassfilter 20 12 0 14
+-233017 -66577 0;
+#X obj -7 295 outlet~;
+#X obj -45 107 inlet~;
+#X obj 124 150 hsl 128 15 0 10000 0 0 empty hpf-frequency Cut-off_frequency
+-2 -8 0 10 -257985 -1 -1 0 1;
+#X floatatom 264 149 5 0 0 0 - - -;
+#X obj -7 217 hip~;
+#X obj 291 107 bng 15 250 50 0 empty hp-reset empty 17 7 0 10 -204786
+-1 -1;
+#X text 278 125 RESET;
+#X obj 249 107 tgl 15 0 \$0-activate activate-hp empty 17 7 0 10 -204800
+-1 -1 0 1;
+#X text 240 126 ACTIV;
+#X obj 4 107 r \$0-activate;
+#X obj -46 186 s~ \$0-bypass;
+#X obj -45 146 spigot~;
+#X obj 53 245 r~ \$0-bypass;
+#X obj 358 -5 loadbang;
+#X msg 391 58 \; hpf-frequency 0;
+#X text 198 259 Switch off the activate toggle to bypass signal to
+next sound-effect patch or outlet.;
+#X text 199 294 Click on reset to set paremeter to default value;
+#X text 198 235 Swich on the activate toggle to activate sound-effect.
+;
+#X text 197 198 This is a sound-effect patch that filters the frenquency
+that is higher than the cut-off frequency.;
+#X connect 2 0 12 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 1;
+#X connect 5 0 1 0;
+#X connect 6 0 15 0;
+#X connect 10 0 12 1;
+#X connect 12 0 11 0;
+#X connect 12 1 5 0;
+#X connect 13 0 1 0;
+#X connect 14 0 15 0;
+#X coords 50 -1 1 1 220 80 1 100 100;

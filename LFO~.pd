@@ -1,0 +1,89 @@
+#N canvas 543 224 1132 627 10;
+#X floatatom 257 148 5 0 0 0 - - -;
+#X floatatom 256 194 5 0 0 0 - - -;
+#X obj 275 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 262 124 RESET;
+#X obj 107 150 hsl 128 15 0 50 0 0 empty empty SPEED -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 108 198 hsl 128 15 0 1 0 0 empty empty DEPTH -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 103 165 0;
+#X text 226 165 50;
+#X text 103 215 0;
+#X text 232 215 1;
+#X text 219 102 SINE;
+#X text 219 121 SQUARE;
+#X obj 12 160 inlet;
+#X obj 11 114 inlet;
+#X obj 77 21 loadbang;
+#X obj 77 66 f \$1;
+#X obj 144 21 loadbang;
+#X obj 144 66 f \$2;
+#X obj 214 300 outlet;
+#X obj 147 299 outlet;
+#X obj 201 107 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 369 275 osc~;
+#X obj 370 371 clip~ -1 1;
+#X obj 369 410 *~;
+#X obj 369 453 outlet~;
+#X obj 530 34 route 0 1;
+#X obj 480 240 spigot;
+#X obj 612 131 1;
+#X obj 530 132 0;
+#X floatatom 530 206 5 0 0 0 - - -;
+#X floatatom 454 306 5 0 0 0 - - -;
+#X obj 480 133 99999;
+#X obj 571 132 1;
+#X obj 571 238 spigot;
+#X obj 571 206 1;
+#X obj 369 326 *~;
+#X obj 625 207 loadbang;
+#X obj 625 238 1;
+#X obj 480 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 4 358 This LFO is base of most other sound-effects of our Voice
+Changer \, the square wave format logic has been removed because a
+square wave osicllitor is useless in terms of a voice changer application
+because it jsut eliminates portions of the orginal sound.;
+#X connect 0 0 21 0;
+#X connect 0 0 19 0;
+#X connect 1 0 23 1;
+#X connect 1 0 18 0;
+#X connect 2 0 16 0;
+#X connect 2 0 14 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 12 0 5 0;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 15 0 0 0;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 1 0;
+#X connect 20 0 25 0;
+#X connect 21 0 35 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 25 0 32 0;
+#X connect 25 0 28 0;
+#X connect 25 0 38 0;
+#X connect 25 1 27 0;
+#X connect 25 1 38 0;
+#X connect 26 0 30 0;
+#X connect 27 0 29 0;
+#X connect 28 0 29 0;
+#X connect 29 0 26 1;
+#X connect 30 0 35 1;
+#X connect 31 0 26 0;
+#X connect 32 0 34 0;
+#X connect 33 0 30 0;
+#X connect 34 0 33 0;
+#X connect 34 0 33 1;
+#X connect 35 0 22 0;
+#X connect 36 0 37 0;
+#X connect 37 0 30 0;
+#X connect 38 0 31 0;
+#X coords 0 -1 1 1 200 130 1 100 100;

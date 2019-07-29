@@ -1,0 +1,69 @@
+#N canvas 393 188 876 503 10;
+#X obj 103 103 cnv 15 214 154 empty empty Reverberation 20 16 0 14
+-233017 -66577 0;
+#X obj 543 6 inlet~;
+#X obj 582 376 +~;
+#X obj 581 441 outlet~;
+#X obj 628 203 delwrite~ delayline 1000;
+#X obj 630 286 sig~;
+#X obj 629 318 vd~ delayline;
+#X obj 722 347 *~;
+#X obj 738 294 sig~;
+#X obj 346 -8 loadbang;
+#X obj 287 108 bng 15 250 50 0 empty rvb-reset empty 17 7 0 10 -204786
+-1 -1;
+#X obj 245 108 tgl 15 0 \$0-activate activate-rvb empty 17 7 0 10 -204800
+-1 -1 0 1;
+#X obj 543 56 spigot~;
+#X obj 609 7 r \$0-activate;
+#X obj 543 95 s~ \$0-bypass;
+#X obj 640 402 r~ \$0-bypass;
+#X obj 124 163 hsl 128 15 1 1000 0 0 empty delay delay -2 -8 0 10 -257985
+-1 -1 0 1;
+#X text 117 174 1;
+#X text 231 177 1000;
+#X floatatom 267 162 5 0 0 0 - - -;
+#X obj 123 210 hsl 128 15 -1 1 0 0 empty feedback feedback -2 -8 0
+10 -257985 -1 -1 6350 1;
+#X text 114 226 -1;
+#X text 244 226 1;
+#X floatatom 265 210 5 0 0 0 - - -;
+#X text 277 126 RESET;
+#X text 236 126 ACTIV;
+#X obj 338 160 s \$0-delay;
+#X obj 630 244 r \$0-delay;
+#X obj 337 206 s \$0-feedback;
+#X obj 738 233 r \$0-feedback;
+#X obj 629 145 r~ feed-back;
+#X obj 722 381 s~ feed-back;
+#X msg 357 32 \; delay 0 \; feedback 0;
+#X text 68 379 Switch off the activate toggle to bypass signal to next
+sound-effect patch or outlet.;
+#X text 69 414 Click on reset to set paremeter to default value;
+#X text 68 355 Swich on the activate toggle to activate sound-effect.
+;
+#X text 66 308 This is a sound-effect patch that applies a certain
+delay and feedback value to simulate sound behavior in a different
+environment.;
+#X connect 1 0 12 0;
+#X connect 2 0 3 0;
+#X connect 2 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 31 0;
+#X connect 8 0 7 1;
+#X connect 9 0 32 0;
+#X connect 10 0 32 0;
+#X connect 12 0 14 0;
+#X connect 12 1 4 0;
+#X connect 12 1 2 0;
+#X connect 13 0 12 1;
+#X connect 15 0 3 0;
+#X connect 16 0 19 0;
+#X connect 19 0 26 0;
+#X connect 20 0 23 0;
+#X connect 23 0 28 0;
+#X connect 27 0 5 0;
+#X connect 29 0 8 0;
+#X connect 30 0 4 0;
+#X coords 0 -1 1 1 220 160 1 100 100;

@@ -36,5 +36,6 @@ co-ordinates of the 3-d object. Alternatively you can select the auto-rotate pro
 The output sound signal can have it's volume level controlled in the bttom right of the voice changer using the "volume" slider.
 A detailed look at the output sound's vareform and spectrum can be viewed by openinbg the "wsprobe" object.
 
-- Refer to the contained PDF file for more details relating to the project.
+
+Refer to the contained PDF file for more details relating to the project.
 
